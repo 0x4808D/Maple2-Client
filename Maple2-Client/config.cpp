@@ -44,8 +44,8 @@ namespace config {
   }
 
   // Required so these are not configurable.
-  bool DisableNXL = true;
-  bool BypassNGS = true;
+  bool DisableNXL = false;
+  bool BypassNGS = false;
 
   // Custom configuration
   std::string WindowName;

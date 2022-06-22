@@ -147,7 +147,7 @@ namespace hook {
     LPSTR sCmd = GetCommandLineA();
 
     // We only want to redirect the initial run.
-    if (!strstr(sCmd, "nxapp")) {
+    if (!strstr(sCmd, "maple2")) {
       char strFileName[MAX_PATH];
       GetModuleFileNameA(NULL, strFileName, MAX_PATH);
 
@@ -157,7 +157,7 @@ namespace hook {
       }
 
       char strCmd[1024];
-      std::snprintf(strCmd, 1024, "\"%s\" %d --nxapp=nxl --lc=%s", strFileName, config::Port, config::Locale.c_str());
+      std::snprintf(strCmd, 1024, "\"%s\" %s %d --maple2=true", strFileName, sCmd, config::Port);
       std::cout << strCmd << std::endl;
 
       PROCESS_INFORMATION procInfo = {};
